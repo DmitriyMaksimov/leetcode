@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="catch2\catch.hpp" />
     <ClInclude Include="solutions\136_SingleNumber.h" />
+    <ClInclude Include="solutions\26_RemoveDuplicatesFromSortedArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
