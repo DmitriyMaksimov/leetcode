@@ -9,6 +9,7 @@ using namespace std;
 
 #include "solutions/136_SingleNumber.h"
 #include "solutions/26_RemoveDuplicatesFromSortedArray.h"
+#include "solutions/9_PalindromeNumber.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -58,5 +59,35 @@ TEST_CASE("26. Remove Duplicates from Sorted Array", "[26]")
 		const auto expected = vector<int>({0, 1, 2, 3, 4});
 		REQUIRE(solution.removeDuplicates(v) == expected.size());
 		REQUIRE(vector<int>(v.begin(), v.begin() + expected.size()) == expected);
+	}
+}
+
+TEST_CASE("9. Palindrome Number", "[9]")
+{
+	Solution_9 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.isPalindrome(121) == true);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.isPalindrome(-121) == false);
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.isPalindrome(10) == false);
+	}
+
+	SECTION("Example 4")
+	{
+		REQUIRE(solution.isPalindrome(-101) == false);
+	}
+
+	SECTION("Example 4")
+	{
+		REQUIRE(solution.isPalindrome(1234321) == true);
 	}
 }
