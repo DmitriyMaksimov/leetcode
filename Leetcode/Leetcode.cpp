@@ -18,6 +18,7 @@ using namespace std;
 #include "solutions/1672_RichestCustomerWealth.h"
 #include "solutions/1684_CountTheNumberOfConsistentStrings.h"
 #include "solutions/1603_DesignParkingSystem.h"
+#include "solutions/1528_ShuffleString.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -184,5 +185,40 @@ TEST_CASE("1603. Design Parking System", "[1603]")
 		REQUIRE(parkingSystem.addCar(2) == true);
 		REQUIRE(parkingSystem.addCar(3) == false);
 		REQUIRE(parkingSystem.addCar(1) == false);
+	}
+}
+
+TEST_CASE("1528. Shuffle String", "[1528]")
+{
+	Solution_1528 solution;
+
+	SECTION("Example 1")
+	{
+		vector v{4, 5, 6, 7, 0, 2, 1, 3};
+		REQUIRE(solution.restoreString("codeleet", v) == "leetcode");
+	}
+
+	SECTION("Example 2")
+	{
+		vector v{0, 1, 2};
+		REQUIRE(solution.restoreString("abc", v) == "abc");
+	}
+
+	SECTION("Example 3")
+	{
+		vector v{3, 1, 4, 2, 0};
+		REQUIRE(solution.restoreString("aiohn", v) == "nihao");
+	}
+
+	SECTION("Example 4")
+	{
+		vector v{4,0,2,6,7,3,1,5};
+		REQUIRE(solution.restoreString("aaiougrt", v) == "arigatou");
+	}
+
+	SECTION("Example 5")
+	{
+		vector v{1,0,2};
+		REQUIRE(solution.restoreString("art", v) == "rat");
 	}
 }
