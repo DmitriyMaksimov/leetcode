@@ -10,6 +10,7 @@ using namespace std;
 #include "solutions/136_SingleNumber.h"
 #include "solutions/26_RemoveDuplicatesFromSortedArray.h"
 #include "solutions/9_PalindromeNumber.h"
+#include "solutions/1480_RunningSumOf1dArray.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -89,5 +90,31 @@ TEST_CASE("9. Palindrome Number", "[9]")
 	SECTION("Example 4")
 	{
 		REQUIRE(solution.isPalindrome(1234321) == true);
+	}
+}
+
+TEST_CASE("1480. Running Sum of 1d Array", "[1480]")
+{
+	Solution_1480 solution;
+
+	SECTION("Example 1")
+	{
+		auto v = vector<int>({1, 2, 3, 4});
+		const auto expected = vector<int>({1, 3, 6, 10});
+		REQUIRE(solution.runningSum(v) == expected);
+	}
+
+	SECTION("Example 2")
+	{
+		auto v = vector<int>({1, 1, 1, 1, 1});
+		const auto expected = vector<int>({1, 2, 3, 4, 5});
+		REQUIRE(solution.runningSum(v) == expected);
+	}
+
+	SECTION("Example 3")
+	{
+		auto v = vector<int>({3, 1, 2, 10, 1});
+		const auto expected = vector<int>({3, 4, 6, 16, 17});
+		REQUIRE(solution.runningSum(v) == expected);
 	}
 }
