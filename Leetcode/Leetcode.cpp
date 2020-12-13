@@ -21,6 +21,7 @@ using namespace std;
 #include "solutions/1528_ShuffleString.h"
 #include "solutions/1281_SubtractTheProductAndSumOfDigitsOfAnInteger.h"
 #include "solutions/1313_DecompressRunLengthEncodedList.h"
+#include "solutions/1662_CheckIfTwoStringArraysAreEquivalent.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -254,5 +255,31 @@ TEST_CASE("1313. Decompress Run-Length Encoded List", "[1313]")
 	{
 		vector v{1, 1, 2, 3};
 		REQUIRE(solution.decompressRLElist(v) == vector {1, 3, 3});
+	}
+}
+
+TEST_CASE("1662. Check If Two String Arrays are Equivalent", "[1662]")
+{
+	Solution_1662 solution;
+
+	SECTION("Example 1")
+	{
+		vector<string> v{"ab", "c"};
+		vector<string> v2{"a", "bc"};
+		REQUIRE(solution.arrayStringsAreEqual(v, v2) == true);
+	}
+
+	SECTION("Example 2")
+	{
+		vector<string> v{"a", "cb"};
+		vector<string> v2{"ab", "c"};
+		REQUIRE(solution.arrayStringsAreEqual(v, v2) == false);
+	}
+
+	SECTION("Example 3")
+	{
+		vector<string> v{"abc", "d", "defg"};
+		vector<string> v2{"abcddefg"};
+		REQUIRE(solution.arrayStringsAreEqual(v, v2) == true);
 	}
 }
