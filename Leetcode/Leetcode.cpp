@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <numeric>
+#include <string>
+#include <set>
 
 // Catch2
 #define CATCH_CONFIG_MAIN
@@ -13,6 +15,7 @@ using namespace std;
 #include "solutions/9_PalindromeNumber.h"
 #include "solutions/1480_RunningSumOf1dArray.h"
 #include "solutions/1672_RichestCustomerWealth.h"
+#include "solutions/1684_CountTheNumberOfConsistentStrings.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -141,5 +144,31 @@ TEST_CASE("1672. Richest Customer Wealth", "[1672]")
 	{
 		auto v = vector<vector<int>>({{2, 8, 7}, {7, 1, 3}, {1, 9, 5}});
 		REQUIRE(solution.maximumWealth(v) == 17);
+	}
+}
+
+TEST_CASE("1684. Count the Number of Consistent Strings", "[1684]")
+{
+	Solution_1684 solution;
+
+	SECTION("Example 1")
+	{
+		const auto* allowed = "ab";
+		auto words = vector<string>{"ad", "bd", "aaab", "baa", "badab"};
+		REQUIRE(solution.countConsistentStrings(allowed, words) == 2);
+	}
+
+	SECTION("Example 2")
+	{
+		const auto* allowed = "abc";
+		auto words = vector<string>{"a", "b", "c", "ab", "ac", "bc", "abc"};
+		REQUIRE(solution.countConsistentStrings(allowed, words) == 7);
+	}
+
+	SECTION("Example 3")
+	{
+		const auto* allowed = "cad";
+		auto words = vector<string>{"cc", "acd", "b", "ba", "bac", "bad", "ac", "d"};
+		REQUIRE(solution.countConsistentStrings(allowed, words) == 4);
 	}
 }
