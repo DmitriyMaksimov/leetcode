@@ -20,6 +20,7 @@ using namespace std;
 #include "solutions/1603_DesignParkingSystem.h"
 #include "solutions/1528_ShuffleString.h"
 #include "solutions/1281_SubtractTheProductAndSumOfDigitsOfAnInteger.h"
+#include "solutions/1313_DecompressRunLengthEncodedList.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -213,13 +214,13 @@ TEST_CASE("1528. Shuffle String", "[1528]")
 
 	SECTION("Example 4")
 	{
-		vector v{4,0,2,6,7,3,1,5};
+		vector v{4, 0, 2, 6, 7, 3, 1, 5};
 		REQUIRE(solution.restoreString("aaiougrt", v) == "arigatou");
 	}
 
 	SECTION("Example 5")
 	{
-		vector v{1,0,2};
+		vector v{1, 0, 2};
 		REQUIRE(solution.restoreString("art", v) == "rat");
 	}
 }
@@ -236,5 +237,22 @@ TEST_CASE("1281. Subtract the Product and Sum of Digits of an Integer", "[1281]"
 	SECTION("Example 2")
 	{
 		REQUIRE(solution.subtractProductAndSum(4421) == 21);
+	}
+}
+
+TEST_CASE("1313. Decompress Run-Length Encoded List", "[1313]")
+{
+	Solution_1313 solution;
+
+	SECTION("Example 1")
+	{
+		vector v{1, 2, 3, 4};
+		REQUIRE(solution.decompressRLElist(v) == vector {2, 4, 4, 4});
+	}
+
+	SECTION("Example 2")
+	{
+		vector v{1, 1, 2, 3};
+		REQUIRE(solution.decompressRLElist(v) == vector {1, 3, 3});
 	}
 }

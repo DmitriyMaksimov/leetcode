@@ -26,5 +26,8 @@
     <ClInclude Include="catch2\catch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="solutions\26_RemoveDuplicatesFromSortedArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
