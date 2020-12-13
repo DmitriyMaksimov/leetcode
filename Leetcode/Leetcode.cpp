@@ -22,6 +22,7 @@ using namespace std;
 #include "solutions/1281_SubtractTheProductAndSumOfDigitsOfAnInteger.h"
 #include "solutions/1313_DecompressRunLengthEncodedList.h"
 #include "solutions/1662_CheckIfTwoStringArraysAreEquivalent.h"
+#include "solutions/1389_CreateTargetArrayInTheGivenOrder.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -281,5 +282,31 @@ TEST_CASE("1662. Check If Two String Arrays are Equivalent", "[1662]")
 		vector<string> v{"abc", "d", "defg"};
 		vector<string> v2{"abcddefg"};
 		REQUIRE(solution.arrayStringsAreEqual(v, v2) == true);
+	}
+}
+
+TEST_CASE("1389. Create Target Array in the Given Order", "[1389]")
+{
+	Solution_1389 solution;
+
+	SECTION("Example 1")
+	{
+		vector nums{0, 1, 2, 3, 4};
+		vector index{0, 1, 2, 2, 1};
+		REQUIRE(solution.createTargetArray(nums, index) == vector {0, 4, 1, 3, 2});
+	}
+
+	SECTION("Example 2")
+	{
+		vector nums{1, 2, 3, 4, 0};
+		vector index{0, 1, 2, 3, 0};
+		REQUIRE(solution.createTargetArray(nums, index) == vector {0, 1, 2, 3, 4});
+	}
+
+	SECTION("Example 3")
+	{
+		vector nums{1};
+		vector index{0};
+		REQUIRE(solution.createTargetArray(nums, index) == vector {1});
 	}
 }
