@@ -3,6 +3,7 @@
 #include <numeric>
 #include <string>
 #include <set>
+#include <array>
 
 // Catch2
 #define CATCH_CONFIG_MAIN
@@ -16,6 +17,7 @@ using namespace std;
 #include "solutions/1480_RunningSumOf1dArray.h"
 #include "solutions/1672_RichestCustomerWealth.h"
 #include "solutions/1684_CountTheNumberOfConsistentStrings.h"
+#include "solutions/1603_DesignParkingSystem.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -170,5 +172,17 @@ TEST_CASE("1684. Count the Number of Consistent Strings", "[1684]")
 		const auto* allowed = "cad";
 		auto words = vector<string>{"cc", "acd", "b", "ba", "bac", "bad", "ac", "d"};
 		REQUIRE(solution.countConsistentStrings(allowed, words) == 4);
+	}
+}
+
+TEST_CASE("1603. Design Parking System", "[1603]")
+{
+	SECTION("Example 1")
+	{
+		ParkingSystem parkingSystem(1, 1, 0);
+		REQUIRE(parkingSystem.addCar(1) == true);
+		REQUIRE(parkingSystem.addCar(2) == true);
+		REQUIRE(parkingSystem.addCar(3) == false);
+		REQUIRE(parkingSystem.addCar(1) == false);
 	}
 }
