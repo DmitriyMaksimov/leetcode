@@ -19,6 +19,7 @@ using namespace std;
 #include "solutions/1684_CountTheNumberOfConsistentStrings.h"
 #include "solutions/1603_DesignParkingSystem.h"
 #include "solutions/1528_ShuffleString.h"
+#include "solutions/1281_SubtractTheProductAndSumOfDigitsOfAnInteger.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -220,5 +221,20 @@ TEST_CASE("1528. Shuffle String", "[1528]")
 	{
 		vector v{1,0,2};
 		REQUIRE(solution.restoreString("art", v) == "rat");
+	}
+}
+
+TEST_CASE("1281. Subtract the Product and Sum of Digits of an Integer", "[1281]")
+{
+	Solution_1281 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.subtractProductAndSum(234) == 15);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.subtractProductAndSum(4421) == 21);
 	}
 }
