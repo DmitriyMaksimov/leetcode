@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <numeric>
 
 // Catch2
 #define CATCH_CONFIG_MAIN
@@ -11,6 +12,7 @@ using namespace std;
 #include "solutions/26_RemoveDuplicatesFromSortedArray.h"
 #include "solutions/9_PalindromeNumber.h"
 #include "solutions/1480_RunningSumOf1dArray.h"
+#include "solutions/1672_RichestCustomerWealth.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -116,5 +118,28 @@ TEST_CASE("1480. Running Sum of 1d Array", "[1480]")
 		auto v = vector<int>({3, 1, 2, 10, 1});
 		const auto expected = vector<int>({3, 4, 6, 16, 17});
 		REQUIRE(solution.runningSum(v) == expected);
+	}
+}
+
+TEST_CASE("1672. Richest Customer Wealth", "[1672]")
+{
+	Solution_1672 solution;
+
+	SECTION("Example 1")
+	{
+		auto v = vector<vector<int>>({{1, 2, 3}, {3, 2, 1}});
+		REQUIRE(solution.maximumWealth(v) == 6);
+	}
+
+	SECTION("Example 2")
+	{
+		auto v = vector<vector<int>>({{1, 5}, {7, 3}, {3, 5}});
+		REQUIRE(solution.maximumWealth(v) == 10);
+	}
+
+	SECTION("Example 3")
+	{
+		auto v = vector<vector<int>>({{2, 8, 7}, {7, 1, 3}, {1, 9, 5}});
+		REQUIRE(solution.maximumWealth(v) == 17);
 	}
 }
