@@ -27,6 +27,7 @@ using namespace std;
 #include "solutions/1512_NumberOfGoodPairs.h"
 #include "solutions/1678_GoalParserInterpretation.h"
 #include "solutions/1342_NumberOfStepsToReduceANumberToZero.h"
+#include "solutions/1365_HowManyNumbersAreSmallerThanTheCurrentNumber.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -392,5 +393,25 @@ TEST_CASE("1342. Number of Steps to Reduce a Number to Zero", "[1342]")
 	SECTION("Edge case")
 	{
 		REQUIRE(solution.numberOfSteps(0) == 0);
+	}
+}
+
+TEST_CASE("1365. How Many Numbers Are Smaller Than the Current Number", "[1365]")
+{
+	Solution_1365 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.smallerNumbersThanCurrent({8,1,2,2,3}) == vector{4, 0, 1, 1, 3});
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.smallerNumbersThanCurrent({6,5,4,8}) == vector{2, 1, 0, 3});
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.smallerNumbersThanCurrent({7,7,7,7}) == vector{0, 0, 0, 0});
 	}
 }
