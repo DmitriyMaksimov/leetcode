@@ -31,6 +31,7 @@ using namespace std;
 #include "solutions/1688_CountOfMatchesInTournament.h"
 #include "solutions/1470_ShuffleTheArray.h"
 #include "solutions/1486_XOROperationInAnArray.h"
+#include "solutions/1290_ConvertBinaryNumberInALinkedListToInteger.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -481,5 +482,62 @@ TEST_CASE("1486. XOR Operation in an Array", "[1486]")
 	SECTION("Edge case 1")
 	{
 		REQUIRE(solution.xorOperation(1000, 1000) == 0);
+	}
+}
+
+TEST_CASE("1290. Convert Binary Number in a Linked List to Integer", "[1290]")
+{
+	Solution_1290 solution;
+
+	SECTION("Example 1")
+	{
+		Solution_1290::ListNode node0(1);
+		Solution_1290::ListNode node1(0, &node0);
+		Solution_1290::ListNode node2(1, &node1);
+
+		REQUIRE(solution.getDecimalValue(&node2) == 5);
+	}
+
+	SECTION("Example 2")
+	{
+		Solution_1290::ListNode node0(0);
+
+		REQUIRE(solution.getDecimalValue(&node0) == 0);
+	}
+
+	SECTION("Example 3")
+	{
+		Solution_1290::ListNode node0(1);
+
+		REQUIRE(solution.getDecimalValue(&node0) == 1);
+	}
+
+	SECTION("Example 4")
+	{
+		Solution_1290::ListNode node0(0);
+		Solution_1290::ListNode node1(0, &node0);
+		Solution_1290::ListNode node2(0, &node1);
+		Solution_1290::ListNode node3(0, &node2);
+		Solution_1290::ListNode node4(0, &node3);
+		Solution_1290::ListNode node5(0, &node4);
+		Solution_1290::ListNode node6(1, &node5);
+		Solution_1290::ListNode node7(1, &node6);
+		Solution_1290::ListNode node8(1, &node7);
+		Solution_1290::ListNode node9(0, &node8);
+		Solution_1290::ListNode node10(0, &node9);
+		Solution_1290::ListNode node11(1, &node10);
+		Solution_1290::ListNode node12(0, &node11);
+		Solution_1290::ListNode node13(0, &node12);
+		Solution_1290::ListNode node14(1, &node13);
+
+		REQUIRE(solution.getDecimalValue(&node14) == 18880);
+	}
+
+	SECTION("Example 5")
+	{
+		Solution_1290::ListNode node0(0);
+		Solution_1290::ListNode node1(0, &node0);
+
+		REQUIRE(solution.getDecimalValue(&node1) == 0);
 	}
 }
