@@ -26,6 +26,7 @@ using namespace std;
 #include "solutions/771_JewelsAndStones.h"
 #include "solutions/1512_NumberOfGoodPairs.h"
 #include "solutions/1678_GoalParserInterpretation.h"
+#include "solutions/1342_NumberOfStepsToReduceANumberToZero.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -366,5 +367,30 @@ TEST_CASE("1678. Goal Parser Interpretation", "[1678]")
 	SECTION("Example 3")
 	{
 		REQUIRE(solution.interpret("(al)G(al)()()G") == "alGalooG");
+	}
+}
+
+TEST_CASE("1342. Number of Steps to Reduce a Number to Zero", "[1342]")
+{
+	Solution_1342 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.numberOfSteps(14) == 6);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.numberOfSteps(8) == 4);
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.numberOfSteps(123) == 12);
+	}
+
+	SECTION("Edge case")
+	{
+		REQUIRE(solution.numberOfSteps(0) == 0);
 	}
 }
