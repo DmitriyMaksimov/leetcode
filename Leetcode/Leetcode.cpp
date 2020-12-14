@@ -24,6 +24,7 @@ using namespace std;
 #include "solutions/1662_CheckIfTwoStringArraysAreEquivalent.h"
 #include "solutions/1389_CreateTargetArrayInTheGivenOrder.h"
 #include "solutions/771_JewelsAndStones.h"
+#include "solutions/1512_NumberOfGoodPairs.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -324,5 +325,25 @@ TEST_CASE("771. Jewels and Stones", "[771]")
 	SECTION("Example 2")
 	{
 		REQUIRE(solution.numJewelsInStones("z", "ZZZZ") == 0);
+	}
+}
+
+TEST_CASE("1512. Number of Good Pairs", "[1512]")
+{
+	Solution_1512 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.numIdenticalPairs({1, 2, 3, 1, 1, 3}) == 4);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.numIdenticalPairs({1, 1, 1, 1}) == 6);
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.numIdenticalPairs({1, 2, 3}) == 0);
 	}
 }
