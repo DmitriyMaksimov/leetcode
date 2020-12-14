@@ -23,6 +23,7 @@ using namespace std;
 #include "solutions/1313_DecompressRunLengthEncodedList.h"
 #include "solutions/1662_CheckIfTwoStringArraysAreEquivalent.h"
 #include "solutions/1389_CreateTargetArrayInTheGivenOrder.h"
+#include "solutions/771_JewelsAndStones.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -308,5 +309,20 @@ TEST_CASE("1389. Create Target Array in the Given Order", "[1389]")
 		vector nums{1};
 		vector index{0};
 		REQUIRE(solution.createTargetArray(nums, index) == vector {1});
+	}
+}
+
+TEST_CASE("771. Jewels and Stones", "[771]")
+{
+	Solution_771 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.numJewelsInStones("aA", "aAAbbbb") == 3);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.numJewelsInStones("z", "ZZZZ") == 0);
 	}
 }
