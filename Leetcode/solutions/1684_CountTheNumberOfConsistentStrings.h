@@ -11,7 +11,7 @@ public:
     	
     	for (const auto& word: words)
     	{
-    		if (all_of(word.cbegin(), word.cend(), [&allowed, &allowedSet](char c) { return allowedSet.contains(c); })) ++count;
+    		if (all_of(word.cbegin(), word.cend(), [&allowedSet](char c) { return allowedSet.contains(c); })) ++count;
     	}
 
     	return count;
