@@ -30,6 +30,7 @@ using namespace std;
 #include "solutions/1365_HowManyNumbersAreSmallerThanTheCurrentNumber.h"
 #include "solutions/1688_CountOfMatchesInTournament.h"
 #include "solutions/1470_ShuffleTheArray.h"
+#include "solutions/1486_XOROperationInAnArray.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -450,5 +451,35 @@ TEST_CASE("1470. Shuffle the Array", "[1470]")
 	SECTION("Example 3")
 	{
 		REQUIRE(solution.shuffle({1, 1, 2, 2}, 2) == vector{1, 2, 1, 2});
+	}
+}
+
+TEST_CASE("1486. XOR Operation in an Array", "[1486]")
+{
+	Solution_1486 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.xorOperation(5, 0) == 8);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.xorOperation(4, 3) == 8);
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.xorOperation(1, 7) == 7);
+	}
+
+	SECTION("Example 4")
+	{
+		REQUIRE(solution.xorOperation(10, 5) == 2);
+	}
+
+	SECTION("Edge case 1")
+	{
+		REQUIRE(solution.xorOperation(1000, 1000) == 0);
 	}
 }
