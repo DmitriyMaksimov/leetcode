@@ -29,6 +29,7 @@ using namespace std;
 #include "solutions/1342_NumberOfStepsToReduceANumberToZero.h"
 #include "solutions/1365_HowManyNumbersAreSmallerThanTheCurrentNumber.h"
 #include "solutions/1688_CountOfMatchesInTournament.h"
+#include "solutions/1470_ShuffleTheArray.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -429,5 +430,25 @@ TEST_CASE("1688. Count of Matches in Tournament", "[1688]")
 	SECTION("Example 2")
 	{
 		REQUIRE(solution.numberOfMatches(14) == 13);
+	}
+}
+
+TEST_CASE("1470. Shuffle the Array", "[1470]")
+{
+	Solution_1470 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.shuffle({2, 5, 1, 3, 4, 7}, 3) == vector{2, 3, 5, 4, 1, 7});
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.shuffle({1, 2, 3, 4, 4, 3, 2, 1}, 4) == vector{1, 4, 2, 3, 3, 2, 4, 1});
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.shuffle({1, 1, 2, 2}, 2) == vector{1, 2, 1, 2});
 	}
 }
