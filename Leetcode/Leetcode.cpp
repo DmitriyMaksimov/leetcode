@@ -28,6 +28,7 @@ using namespace std;
 #include "solutions/1678_GoalParserInterpretation.h"
 #include "solutions/1342_NumberOfStepsToReduceANumberToZero.h"
 #include "solutions/1365_HowManyNumbersAreSmallerThanTheCurrentNumber.h"
+#include "solutions/1688_CountOfMatchesInTournament.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -413,5 +414,20 @@ TEST_CASE("1365. How Many Numbers Are Smaller Than the Current Number", "[1365]"
 	SECTION("Example 3")
 	{
 		REQUIRE(solution.smallerNumbersThanCurrent({7,7,7,7}) == vector{0, 0, 0, 0});
+	}
+}
+
+TEST_CASE("1688. Count of Matches in Tournament", "[1688]")
+{
+	Solution_1688 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.numberOfMatches(7) == 6);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.numberOfMatches(14) == 13);
 	}
 }
