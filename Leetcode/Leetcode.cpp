@@ -25,6 +25,7 @@ using namespace std;
 #include "solutions/1389_CreateTargetArrayInTheGivenOrder.h"
 #include "solutions/771_JewelsAndStones.h"
 #include "solutions/1512_NumberOfGoodPairs.h"
+#include "solutions/1678_GoalParserInterpretation.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -345,5 +346,25 @@ TEST_CASE("1512. Number of Good Pairs", "[1512]")
 	SECTION("Example 3")
 	{
 		REQUIRE(solution.numIdenticalPairs({1, 2, 3}) == 0);
+	}
+}
+
+TEST_CASE("1678. Goal Parser Interpretation", "[1678]")
+{
+	Solution_1678 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.interpret("G()(al)") == "Goal");
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.interpret("G()()()()(al)") == "Gooooal");
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.interpret("(al)G(al)()()G") == "alGalooG");
 	}
 }
