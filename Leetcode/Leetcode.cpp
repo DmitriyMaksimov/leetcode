@@ -33,6 +33,7 @@ using namespace std;
 #include "solutions/1486_XOROperationInAnArray.h"
 #include "solutions/1290_ConvertBinaryNumberInALinkedListToInteger.h"
 #include "solutions/1295_FindNumbersWithEvenNumberOfDigits.h"
+#include "solutions/709_ToLowerCase.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -555,5 +556,25 @@ TEST_CASE("1295. Find Numbers with Even Number of Digits", "[1295]")
 	SECTION("Example 2")
 	{
 		REQUIRE(solution.findNumbers({555, 901, 482, 1771}) == 1);
+	}
+}
+
+TEST_CASE("709. To Lower Case", "[709]")
+{
+	Solution_709 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.toLowerCase("Hello") == "hello");
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.toLowerCase("here") == "here");
+	}
+
+	SECTION("Example 3")
+	{
+		REQUIRE(solution.toLowerCase("LOVELY") == "lovely");
 	}
 }
