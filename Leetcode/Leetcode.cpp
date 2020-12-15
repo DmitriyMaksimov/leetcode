@@ -32,6 +32,7 @@ using namespace std;
 #include "solutions/1470_ShuffleTheArray.h"
 #include "solutions/1486_XOROperationInAnArray.h"
 #include "solutions/1290_ConvertBinaryNumberInALinkedListToInteger.h"
+#include "solutions/1295_FindNumbersWithEvenNumberOfDigits.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -539,5 +540,20 @@ TEST_CASE("1290. Convert Binary Number in a Linked List to Integer", "[1290]")
 		Solution_1290::ListNode node1(0, &node0);
 
 		REQUIRE(solution.getDecimalValue(&node1) == 0);
+	}
+}
+
+TEST_CASE("1295. Find Numbers with Even Number of Digits", "[1295]")
+{
+	Solution_1295 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.findNumbers({12, 345, 2, 6, 7896}) == 2);
+	}
+
+	SECTION("Example 2")
+	{
+		REQUIRE(solution.findNumbers({555, 901, 482, 1771}) == 1);
 	}
 }
