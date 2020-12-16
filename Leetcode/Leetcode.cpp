@@ -34,6 +34,7 @@ using namespace std;
 #include "solutions/1290_ConvertBinaryNumberInALinkedListToInteger.h"
 #include "solutions/1295_FindNumbersWithEvenNumberOfDigits.h"
 #include "solutions/709_ToLowerCase.h"
+#include "solutions/804_UniqueMorseCodeWords.h"
 
 
 TEST_CASE("Single Number", "[136]")
@@ -576,5 +577,15 @@ TEST_CASE("709. To Lower Case", "[709]")
 	SECTION("Example 3")
 	{
 		REQUIRE(solution.toLowerCase("LOVELY") == "lovely");
+	}
+}
+
+TEST_CASE("804. Unique Morse Code Words", "[804]")
+{
+	Solution_804 solution;
+
+	SECTION("Example 1")
+	{
+		REQUIRE(solution.uniqueMorseRepresentations({"gin", "zen", "gig", "msg"}) == 2);
 	}
 }
